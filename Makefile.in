@@ -86,7 +86,7 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = things_n_stuff$(EXEEXT)
+bin_PROGRAMS = codebase_test2$(EXEEXT)
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -102,10 +102,10 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_things_n_stuff_OBJECTS = main.$(OBJEXT) things.$(OBJEXT) \
-	stuff.$(OBJEXT)
-things_n_stuff_OBJECTS = $(am_things_n_stuff_OBJECTS)
-things_n_stuff_LDADD = $(LDADD)
+am_codebase_test2_OBJECTS = main.$(OBJEXT) simple_type_funcs.$(OBJEXT) \
+	complex_type_funcs.$(OBJEXT)
+codebase_test2_OBJECTS = $(am_codebase_test2_OBJECTS)
+codebase_test2_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -121,8 +121,8 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/main.Po ./$(DEPDIR)/stuff.Po \
-	./$(DEPDIR)/things.Po
+am__depfiles_remade = ./$(DEPDIR)/complex_type_funcs.Po \
+	./$(DEPDIR)/main.Po ./$(DEPDIR)/simple_type_funcs.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -136,8 +136,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(things_n_stuff_SOURCES)
-DIST_SOURCES = $(things_n_stuff_SOURCES)
+SOURCES = $(codebase_test2_SOURCES)
+DIST_SOURCES = $(codebase_test2_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -272,7 +272,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-things_n_stuff_SOURCES = main.c things.c stuff.c
+codebase_test2_SOURCES = main.c simple_type_funcs.c complex_type_funcs.c
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
@@ -369,9 +369,9 @@ uninstall-binPROGRAMS:
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
 
-things_n_stuff$(EXEEXT): $(things_n_stuff_OBJECTS) $(things_n_stuff_DEPENDENCIES) $(EXTRA_things_n_stuff_DEPENDENCIES) 
-	@rm -f things_n_stuff$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(things_n_stuff_OBJECTS) $(things_n_stuff_LDADD) $(LIBS)
+codebase_test2$(EXEEXT): $(codebase_test2_OBJECTS) $(codebase_test2_DEPENDENCIES) $(EXTRA_codebase_test2_DEPENDENCIES) 
+	@rm -f codebase_test2$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(codebase_test2_OBJECTS) $(codebase_test2_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -379,9 +379,9 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/complex_type_funcs.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stuff.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/things.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/simple_type_funcs.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -676,9 +676,9 @@ clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
 
 distclean: distclean-am
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
-		-rm -f ./$(DEPDIR)/main.Po
-	-rm -f ./$(DEPDIR)/stuff.Po
-	-rm -f ./$(DEPDIR)/things.Po
+		-rm -f ./$(DEPDIR)/complex_type_funcs.Po
+	-rm -f ./$(DEPDIR)/main.Po
+	-rm -f ./$(DEPDIR)/simple_type_funcs.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-hdr distclean-tags
@@ -726,9 +726,9 @@ installcheck-am:
 maintainer-clean: maintainer-clean-am
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
 	-rm -rf $(top_srcdir)/autom4te.cache
-		-rm -f ./$(DEPDIR)/main.Po
-	-rm -f ./$(DEPDIR)/stuff.Po
-	-rm -f ./$(DEPDIR)/things.Po
+		-rm -f ./$(DEPDIR)/complex_type_funcs.Po
+	-rm -f ./$(DEPDIR)/main.Po
+	-rm -f ./$(DEPDIR)/simple_type_funcs.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

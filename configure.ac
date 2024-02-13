@@ -1,5 +1,5 @@
 # configure.ac
-AC_INIT([stuff_n_things], [1.0], [your.email@example.com])
+AC_INIT([codebase_test2], [1.0], [your.email@example.com])
 AM_INIT_AUTOMAKE
 AC_PROG_CC
 AC_CONFIG_HEADERS([config.h])

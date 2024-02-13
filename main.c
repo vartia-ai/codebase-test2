@@ -3,18 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "stuff.h"
-#include "things.h"
-
-typedef unsigned int uint_t;
+#include "simple_type_funcs.h"
+#include "complex_type_funcs.h"
 
 int main() 
 {
-    struct global_things_struct s;
-    global_things_type t = 1.2;
-    int h1 = func_in_stuff_h();
-    int h2 = func_in_things_h(t, s);
-
-    printf("h1=%d, h2=%d\n", h1, h2);
+    printf("This is a test project to support test_lldb_util.py\n");
     return 0;
 }

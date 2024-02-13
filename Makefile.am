@@ -1,3 +1,3 @@
 # Makefile.am
-bin_PROGRAMS = things_n_stuff
-things_n_stuff_SOURCES = main.c things.c stuff.c
+bin_PROGRAMS = codebase_test2
+codebase_test2_SOURCES = main.c simple_type_funcs.c complex_type_funcs.c
